@@ -84,7 +84,7 @@ body {
 
 #menu-icon {
     font-size: 3.6rem;
-    color: var(--text-color);
+    color: var(--main-color);
     display: none;
 }
 
@@ -150,7 +150,7 @@ body {
     border-radius: 50%;
     font-size: 2rem;
     color: var(--main-color);
-    margin: 3rem 1.5rem 3rem 0;
+    margin: 1.5rem 0.5rem 1.5rem 0.5rem;
     transition: .5s ease;
 }
 
@@ -171,8 +171,7 @@ body {
     color: var(--text-color);
     letter-spacing: .1rem;
     font-weight: 600;
-    transition: .5s ease;
-    overflow: hidden; /* Hide spinner overflow */
+    margin-bottom: 2rem;
 }
 
 .btn:hover {
@@ -195,6 +194,7 @@ body {
     font-weight: 600;
     transition: .5s ease;
     overflow: hidden; /* Hide spinner overflow */
+    margin-bottom: 2rem;
 }
 
 .btn-secondary:hover {
@@ -467,6 +467,8 @@ body {
     background: var(--bg-color);
 }
 
+
+
 .heading {
     text-align: center;
     font-size: 4.5rem;
@@ -574,9 +576,33 @@ body {
 
 
 .map-container {
-    margin-top: 2rem;
+  padding: 4rem 2rem;
+  background: var(--bg-color);
+  text-align: center;
 }
 
+.map-container h2 {
+  font-size: 3rem;
+  color: var(--second-text-color);
+  margin-bottom: 2rem;
+}
+
+.map-responsive {
+  position: relative;
+  overflow: hidden;
+  padding-top: 56.25%; /* 16:9 aspect ratio */
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.map-responsive iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
 
 footer {
    display: flex;
@@ -604,11 +630,54 @@ footer {
     }
 
     section {
-        padding: 10rem 3% 2rem;
+        padding: 7rem 2% 2rem;
     }
 
-    .services {
-        padding-bottom: 7rem;
+    .services, .contact {
+        padding: 2rem 3%
+    }
+
+    .about-content h2,
+    .services-content h2,
+    .contact-content h2 {
+        margin-top: 8rem;
+        font-size: 3.2rem;
+        text-align: center;
+    }
+
+    .about-content p,
+    .services-content p,
+    .contact-content p {
+        margin-left: 2rem;
+        margin-right: 2rem;
+        font-size: 1.4rem;
+    }
+
+    .story-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .services-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .stat-item {
+        min-width: 150px;
+        margin: 10px;
+    }
+
+    .service-box,
+    .contact-box {
+        padding: 2rem 1rem 2rem;
+        margin: 10px;
+    }
+
+    .about-img img,
+    .home-img img {
+        width: 90vw;
+        margin-bottom: 2rem;
     }
 
     footer {
@@ -639,55 +708,130 @@ footer {
 
     .navbar a {
         display: block;
-        margin: 3rem 0;
-        font-size: 2rem;
+        margin: 2rem 0;
+        font-size: 1.7rem;
     }
 
     .home {
         flex-direction: column;
+        padding: 5rem 2% 2rem;
     }
 
     .home-content h3 {
-        font-size: 2.6rem;
+        font-size: 2rem;
     }
 
     .home-content h1 {
-        font-size: 5rem;
+        font-size: 3.2rem;
     }
 
     .home-img img {
-        width: 70vw;
-        margin-top: 4rem;
+        width: 90vw;
+        margin-top: 2rem;
     }
 
-    .about {
+    .about, .services, .contact {
         flex-direction: column;
+        padding: 5rem 2% 2rem;
     }
 
     .about-img img {
-        width: 70vw;
-        margin-bottom: 4rem;
+        width: 90vw;
+        margin-bottom: 2rem;
     }
 
     .services-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+        gap: 10px;
     }
 
     .services h2 {
-        margin-bottom: 3rem;
+        margin-bottom: 5rem;
+        font-size: 2.5rem;
+    }
+
+    .service-box,
+    .contact-box {
+        padding: 1rem 0.5rem 1rem;
+        margin: 5px;
+    }
+
+    .story-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .stats {
+        flex-direction: column;
+        align-items: center;
     }
 }
 
 @media (max-width: 617px) {
     .services-container {
         grid-template-columns: 1fr;
+        gap: 5px;
     }
-
+    .stat-item {
+        min-width: 120px;
+        margin: 5px;
+    }
+    .about-content h2,
+    .services-content h2,
+    .contact-content h2 {
+        font-size: 2rem;
+        margin-top: 4rem;
+    }
+    .about-content p,
+    .services-content p,
+    .contact-content p {
+        font-size: 1.2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+    .story h2 {
+        font-size: 2rem;
+    }
+    .story p {
+        font-size: 1.2rem;
+    }
+    .mission h3 {
+        font-size: 1.2rem;
+    }
+    .mission p {
+        font-size: 1rem;
+    }
+}
 @media (max-width: 450px) {
     html {
-        font-size: 50%;
+        font-size: 45%;
     }
-    
+    .header {
+        padding: 1rem 1%;
+    }
+    .footer-text p {
+        font-size: 1.2rem;
+    }
+    .about-content h2,
+    .services-content h2,
+    .contact-content h2 {
+        font-size: 1.5rem;
+        margin-top: 2rem;
+    }
+    .about-content p,
+    .services-content p,
+    .contact-content p {
+        font-size: 1rem;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+    }
+    .service-box,
+    .contact-box {
+        padding: 0.5rem 0.2rem 0.5rem;
+        margin: 2px;
+    }
+    .home {
+        padding-top: 12rem; /* Extra top padding for very small screens */
 }
 
 @media (max-width: 365px) {
@@ -702,4 +846,5 @@ footer {
     .footer p {
         text-align: center;
     }
+}
 }
