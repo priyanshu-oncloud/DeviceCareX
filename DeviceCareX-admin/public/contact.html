@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - DeviceCareX Admin</title>
+  <link rel="stylesheet" href="assets/css/admin-style.css">
+</head>
+<body>
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <h1>DeviceCareX Admin</h1>
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    <section id="contact-edit">
+      <h2>Manage Contact Info</h2>
+      <form id="contact-form">
+        <!-- WhatsApp -->
+        <div>
+          <label for="contact-whatsapp">WhatsApp Number:</label>
+          <input type="tel" id="contact-whatsapp" name="whatsapp" placeholder="+91XXXXXXXXXX" required>
+        </div>
+
+        <!-- Phone -->
+        <div>
+          <label for="contact-phone">Phone Number:</label>
+          <input type="tel" id="contact-phone" name="phone" placeholder="+91XXXXXXXXXX" required>
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label for="contact-email">Email Address:</label>
+          <input type="email" id="contact-email" name="email" placeholder="info@shop.com" required>
+        </div>
+
+        <!-- Google Maps -->
+        <div>
+          <label for="contact-maps">Google Maps Embed Link:</label>
+          <input type="text" id="contact-maps" name="maps" placeholder="https://www.google.com/maps/embed..." required>
+        </div>
+
+        <!-- Buttons -->
+        <div class="form-buttons">
+          <button type="submit">Save Contact Info</button>
+          <button type="reset">Clear</button>
+        </div>
+      </form>
+
+      <!-- Preview Section -->
+      <div id="whatsapp-preview" style="margin-top:1rem;"></div>
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script src="assets/js/form-validation.js"></script>
+  <script src="assets/js/admin-app.js"></script>
+</body>
+</html>

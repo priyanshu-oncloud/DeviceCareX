@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Services - DeviceCareX Admin</title>
+  <link rel="stylesheet" href="assets/css/admin-style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h1>DeviceCareX Admin</h1>
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+  </aside>
+  <main class="main-content">
+    <section id="service-crud">
+      <h2>Manage Services</h2>
+      <form id="service-form" enctype="multipart/form-data">
+        <div>
+          <label>Service Image:</label>
+          <input type="file" id="service-image" accept="image/*">
+        </div>
+        <div>
+          <label>Service Name:</label>
+          <input type="text" id="service-name" required>
+        </div>
+        <div>
+          <label>Service Type:</label>
+          <select id="service-type">
+            <option value="Laptop">Laptop</option>
+            <option value="Mobile">Mobile</option>
+            <option value="Accessories">Accessories</option>
+          </select>
+        </div>
+        <div>
+          <label>Price:</label>
+          <input type="number" id="service-price" min="0" step="any">
+        </div>
+        <div>
+          <label>WhatsApp Message:</label>
+          <input type="text" id="service-whatsapp" placeholder="Pre-filled inquiry text">
+        </div>
+        <button type="submit">Add Service</button>
+        <button type="reset">Clear</button>
+      </form>
+      <div id="service-preview" style="display:none; margin-top:1rem;"></div>
+      <hr>
+      <h3>Existing Services</h3>
+      <div id="services-list">
+        <!-- Service cards will be listed here -->
+      </div>
+    </section>
+  </main>
+  <script src="assets/js/form-validation.js"></script>
+  <script src="assets/js/admin-app.js"></script>
+</body>
+</html>

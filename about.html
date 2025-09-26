@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
     <meta name="description" content="">
-    <title>Repair Shop</title>
+    <title>DeviceCareX</title>
     <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
     <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -14,7 +14,7 @@
 </head>
 <body>
     <header class="header">
-        <a href="#" class="logo"><i class='bx  bx-department-store'  ></i> RepairShop</a>
+        <a href="#" class="logo"><i class='bx  bx-department-store'  ></i> DeviceCareX</a>
 
         <i class='bx bx-menu' id="menu-icon"></i>
 
@@ -78,25 +78,13 @@
     <div class="container story-grid">
       <div class="story-text">
         <h2>Our Story</h2>
-        <p>
-          Repair Shop was founded in 2019 with a simple mission: provide fast, reliable, and affordable repair services 
-          for everyday devices that people depend on.
-        </p>
-        <p>
-          What started as a small repair shop has grown into a trusted service center, thanks to our commitment 
-          to quality repairs, transparent pricing, and exceptional customer service.
-        </p>
-        <p>
-          Today, we’re proud to be certified by major manufacturers and trusted by hundreds of customers 
-          who know their devices are in expert hands.
-        </p>
+        <p id="history">> </p>
+        <p id="growth">> </p>
+        <p id="today">> </p>
 
         <div class="mission">
           <h3>Our Mission</h3>
-          <p>
-            To provide exceptional device repair services that get you back to what matters most, 
-            with honesty, expertise, and care in every repair we perform.
-          </p>
+          <p id="mission"> </p>
         </div>
       </div>
 
@@ -110,7 +98,7 @@
      <footer class="footer">
         <div class="footer-text">
             <p>
-                Copyright &copy; 2025 Repair Shop. | All rights reserved.
+                Copyright &copy; 2025 DeviceCareX. | All rights reserved.
             </p>
         </div>
      </footer>
@@ -120,6 +108,18 @@
 
     <!-- Custom JS -->
     <script src="assets/js/app.js"></script>
+        <script>
+    // Fetch JSON file
+    fetch("repair-shop-admin/public/data/about.json")
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("history").textContent = data.history;
+        document.getElementById("growth").textContent = data.growth;
+        document.getElementById("today").textContent = data.today;
+        document.getElementById("mission").textContent = data.mission;
+      })
+      .catch(error => console.error("Error loading JSON:", error));
+  </script>
 
     
 

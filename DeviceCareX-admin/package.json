@@ -1,0 +1,19 @@
+{
+  "name": "repair-shop-admin",
+  "version": "1.0.0",
+  "description": "A fully dynamic admin interface for managing content on a Laptop & Mobile Repairing Shop website. Non-technical shop managers can add, update, or delete services, contact info, about sections, and branding through a clean browser interface.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

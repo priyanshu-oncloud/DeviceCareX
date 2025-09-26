@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - DeviceCareX Admin</title>
+  <link rel="stylesheet" href="assets/css/admin-style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <h1>DeviceCareX Admin</h1>
+    <nav>
+      <a href="index.html">Dashboard</a>
+      <a href="services.html">Services</a>
+      <a href="about.html" class="active">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="settings.html">Settings</a>
+    </nav>
+  </aside>
+
+  <main class="main-content">
+    <section id="about-edit">
+      <h2>Manage About Section</h2>
+      <form id="about-form">
+        <div>
+          <label for="about-history">Our Beginning:</label>
+          <textarea id="about-history" placeholder="Describe the shop's history"></textarea>
+        </div>
+        <div>
+          <label for="about-growth">Our Growth:</label>
+          <textarea id="about-growth" placeholder="Describe the growth of the shop"></textarea>
+        </div>
+        <div>
+          <label for="about-today">Our Today:</label>
+          <textarea id="about-today" placeholder="Describe where the shop stands today"></textarea>
+        </div>
+        <div>
+          <label for="about-mission">Our Mission:</label>
+          <textarea id="about-mission" placeholder="Describe the mission"></textarea>
+        </div>
+        <button type="submit">Save About Info</button>
+        <button type="reset">Clear</button>
+      </form>
+
+      <hr>
+      <h3>Preview</h3>
+      <div id="about-preview">
+        <h4>Our Beginning</h4>
+        <p id="history"></p>
+        <h4>Our Growth</h4>
+        <p id="growth"></p>
+        <h4>Our Today</h4>
+        <p id="today"></p>
+        <h4>Our Mission</h4>
+        <p id="mission"></p>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/js/form-validation.js"></script>
+  <script src="assets/js/admin-app.js"></script>
+    <script>
+    // Fetch JSON file
+    fetch("data/about.json")
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("history").textContent = data.history;
+        document.getElementById("growth").textContent = data.growth;
+        document.getElementById("today").textContent = data.today;
+        document.getElementById("mission").textContent = data.mission;
+      })
+      .catch(error => console.error("Error loading JSON:", error));
+  </script>
+</body>
+</html>

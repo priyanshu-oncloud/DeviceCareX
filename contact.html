@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
   <meta name="description" content="">
-  <title>Repair Shop</title>
+  <title>DeviceCareX</title>
   <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
   <link href='https://cdn.boxicons.com/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -14,7 +14,7 @@
 </head>
 <body>
   <header class="header">
-    <a href="#" class="logo"><i class='bx bx-department-store'></i> RepairShop</a>
+    <a href="#" class="logo"><i class='bx bx-department-store'></i> DeviceCareX</a>
     <i class='bx bx-menu' id="menu-icon"></i>
     <nav class="navbar">
       <a href="index.html">Home</a>
@@ -27,7 +27,7 @@
   <!-- contact Section Design -->
   <section class="contact" id="contact">
     <div class="contact-content">
-      <h2>Contact <span>RepairShop</span></h2>
+      <h2>Contact <span>DeviceCareX</span></h2>
       <p>
         Ready to fix your device? Whether your phone won’t turn on, your laptop is running slow, or your tablet has taken a fall — we’ve got you covered.
         <br><br>
@@ -47,7 +47,8 @@
     <div class="service-box">
       <i class='bx bx-message'></i>
       <h3>WhatsApp Message</h3>
-      <p>(123) 456-7890 <br> Enquiry Now <br> Response within 24hrs</p>
+      <p id="whatsapp"></p>
+      <p>Enquiry Now <br> Response within 24hrs</p>
       <a href="https://wa.me/918839246860?text=Hi%20TechFixPro,%20I%20need%20help%20with%20my%20device."
          class="btn read-more-btn" target="_blank">
         WhatsApp Us Now
@@ -58,7 +59,8 @@
     <div class="service-box">
       <i class='bx bx-phone'></i>
       <h3>Call Us</h3>
-      <p>(123) 456-7890 <br> Mon-Sat: 9AM-7PM <br> Emergency repairs available</p>
+      <p id="phone"></p>
+      <p>Mon-Sat: 9AM-7PM <br> Emergency repairs available</p>
       <a href="tel:1234567890" class="btn read-more-btn">
         Call Now
       </a>
@@ -68,7 +70,8 @@
     <div class="service-box">
       <i class='bx bx-envelope'></i>
       <h3>Email Us</h3>
-      <p>info@techfixpro.com <br> support@techfixpro.com <br> Response within 24hrs</p>
+      <p id="email"></p>
+      <p>support@techfixpro.com <br> Response within 24hrs</p>
       <a href="mailto:info@techfixpro.com" class="btn read-more-btn">
         Send Email
       </a>
@@ -82,7 +85,7 @@
     <h2>Find Us on Google Maps</h2>
     <div class="map-responsive">
       <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3667.6099266730216!2d77.5174862796682!3d23.184432725069925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c41b3bbba4b9f%3A0x9d9c1059c6c2b645!2sSAGE%20University%20Bhopal%20Admin%20Block!5e0!3m2!1sen!2sin!4v1758280093689!5m2!1sen!2sin" 
+        id="maps"
         width="600" 
         height="450" 
         style="border:0;" 
@@ -96,7 +99,7 @@
   <!-- Footer Design -->
   <footer class="footer">
     <div class="footer-text">
-      <p>Copyright &copy; 2025 Repair Shop. | All rights reserved.</p>
+      <p>Copyright &copy; 2025 DeviceCareX. | All rights reserved.</p>
     </div>
   </footer>
 
@@ -104,5 +107,18 @@
   <script src="https://unpkg.com/scrollreveal"></script>
   <!-- Custom JS -->
   <script src="assets/js/app.js"></script>
+
+         <script>
+    // Fetch JSON file
+    fetch("repair-shop-admin/public/data/contact.json")
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("whatsapp").textContent = data.whatsapp;
+        document.getElementById("phone").textContent = data.phone;
+        document.getElementById("email").textContent = data.email;
+        document.getElementById("maps").textContent = data.maps;
+      })
+      .catch(error => console.error("Error loading JSON:", error));
+  </script>
 </body>
 </html>

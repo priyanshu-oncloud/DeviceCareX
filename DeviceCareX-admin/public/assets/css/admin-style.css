@@ -1,0 +1,139 @@
+/* admin-style.css: Sidebar layout and responsive styles */
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f7f7;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background: #0a2c6f;
+  color: #fff;
+  padding: 1rem;
+  position: fixed;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.sidebar h1 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.sidebar nav {
+  margin-top: 2rem;
+}
+
+.sidebar nav a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #1a4a8f;
+}
+
+.sidebar nav a:hover {
+  background: #1a4a8f;
+}
+
+.main-content {
+  margin-left: 250px;
+  flex: 1;
+  padding: 2rem;
+}
+
+section {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+}
+
+button {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 0.5rem;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+button.danger {
+  background: #dc3545;
+}
+
+button.danger:hover {
+  background: #c82333;
+}
+
+button.success {
+  background: #28a745;
+}
+
+button.success:hover {
+  background: #218838;
+}
+
+form div {
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.service-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.service-card img {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
+}
+
+.service-card .actions {
+  margin-left: auto;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%;
+    position: static;
+    height: auto;
+  }
+  .main-content {
+    margin-left: 0;
+  }
+}

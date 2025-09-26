@@ -1,4 +1,4 @@
-  "use strict";
+ "use strict";
 
   /*================ Toggle icon Navbar ================*/
   let menuIcon = document.querySelector('#menu-icon');
